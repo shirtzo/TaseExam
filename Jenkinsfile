@@ -7,10 +7,6 @@ pipeline {
         nodejs 'NodeJS'
     }
 
-    environment {
-        GITHUB_TOKEN = credentials('publishPackage')
-    }
-
     stages {
         stage('Get Envs Variables') {
             steps {
@@ -39,7 +35,11 @@ pipeline {
         stage('Publish to GitHub Packages') {
             steps {
                 script {
-                        sh 'npm publish --access public'
+                    withCredentials([string(credentialsId: 'publishPackage', variable: 'GITHUB_TOKEN')]) {
+                        sh '''
+                            npm publish --access public --@shirtzo:registry=https://npm.pkg.github.com --//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+                        '''
+                    }
                 }
             }
         }
