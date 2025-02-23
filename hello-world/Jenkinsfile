@@ -1,3 +1,5 @@
+@Library('prepare-env') _
+
 pipeline {
     agent any 
 
@@ -12,6 +14,14 @@ pipeline {
     }
 
     stages {
+        stage('Example') {
+            steps {
+                script {
+                    prepareEnv()
+                }
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 script {
