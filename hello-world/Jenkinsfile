@@ -1,10 +1,10 @@
 pipeline {
-    agent {
+    agent any {
         docker {
             image 'node:18'
         }
     }
-    
+
     environment {
         GITHUB_TOKEN = credentials('publishPackage')
         GITHUB_USER = 'shirtzo'
