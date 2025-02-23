@@ -47,7 +47,6 @@ pipeline {
         stage('Publish to GitHub Packages') {
             steps {
                 script {
-                    sh 'npm config set registry https://npm.pkg.github.com/'
                     sh "npm config set //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}"
                     sh 'npm publish --access public'
                 }
