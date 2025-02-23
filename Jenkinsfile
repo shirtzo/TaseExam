@@ -39,11 +39,7 @@ pipeline {
         stage('Publish to GitHub Packages') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'publishPackage', variable: 'GITHUB_TOKEN')]) {
-                        sh ''' 
-                            npm publish --access public
-                        '''
-                    }
+                        sh 'npm publish --access public'
                 }
             }
         }
