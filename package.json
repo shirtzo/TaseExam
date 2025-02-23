@@ -11,8 +11,5 @@
   "description": "A simple Hello World package for testing purposes.",
   "dependencies": {
     "express": "^4.21.2"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
