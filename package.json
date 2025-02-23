@@ -1,6 +1,6 @@
 {
   "name": "@shirtzo/hello-world",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "server.js",
   "scripts": {
     "build": "node server.js"
@@ -11,8 +11,5 @@
   "description": "A simple Hello World package for testing purposes.",
   "dependencies": {
     "express": "^4.21.2"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
