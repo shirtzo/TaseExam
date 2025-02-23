@@ -1,16 +1,14 @@
 pipeline {
-    agent any {
+    agent {
         docker {
             image 'node:18'
         }
     }
-
     environment {
         GITHUB_TOKEN = credentials('publishPackage')
         GITHUB_USER = 'shirtzo'
         GITHUB_REPO = 'TaseExam'
     }
-
     stages {
         stage('Install Dependencies') {
             steps {
