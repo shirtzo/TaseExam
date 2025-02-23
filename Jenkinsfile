@@ -9,18 +9,10 @@ pipeline {
 
     environment {
         GITHUB_TOKEN = credentials('publishPackage')
-        GITHUB_USER = 'shirtzo'
-        GITHUB_REPO = 'TaseExam'
     }
 
     stages {
-        stage('Checkout code') {
-            steps {
-                checkout scm
-            }
-        }
-        
-        stage('Get Envs') {
+        stage('Get Envs Variables') {
             steps {
                 script {
                     prepareEnv()
