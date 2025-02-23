@@ -14,7 +14,13 @@ pipeline {
     }
 
     stages {
-        stage('Example') {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Get Envs') {
             steps {
                 script {
                     prepareEnv()
