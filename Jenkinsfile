@@ -49,7 +49,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'publishPackage', variable: 'GITHUB_TOKEN')]) {
                         sh ''' 
-                            npm config set "@shirtzo:registry" "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN"
+                            npm config set @shirtzo:registry https://npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
                             npm publish --access public
                         '''
                     }
