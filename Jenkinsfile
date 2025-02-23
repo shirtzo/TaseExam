@@ -47,8 +47,12 @@ pipeline {
         stage('Publish to GitHub Packages') {
             steps {
                 script {
-                    sh "npm config set //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}"
-                    sh 'npm publish --access public'
+                    withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')]) {
+                        sh ''' 
+                            npm config set //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
+                            npm publish --access public
+                        '''
+                    }
                 }
             }
         }
