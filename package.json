@@ -1,6 +1,6 @@
 {
   "name": "@shirtzo/hello-world",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "server.js",
   "scripts": {
     "build": "node server.js"
