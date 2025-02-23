@@ -1,14 +1,16 @@
 pipeline {
-    agent {
-        dockerContainer {
-            image 'node:18'
-        }
+    agent any 
+
+    tools {
+        nodejs 'NodeJS'
     }
+
     environment {
         GITHUB_TOKEN = credentials('publishPackage')
         GITHUB_USER = 'shirtzo'
         GITHUB_REPO = 'TaseExam'
     }
+
     stages {
         stage('Install Dependencies') {
             steps {
@@ -37,3 +39,4 @@ pipeline {
         }
     }
 }
+
