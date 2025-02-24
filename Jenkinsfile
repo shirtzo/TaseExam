@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     def envParameters = prepareEnv()
-                    echo "Code Commiter: ${envParameters.codeCommiter}, Commit Hase: ${envParameters.commitHash}, Git URL: ${envParameters.gitUrl}"
+                    echo "Code Commiter: ${envParameters.codeCommiter}, Commit Hash: ${envParameters.commitHash}, Git URL: ${envParameters.gitUrl}"
                 }
             }
         }
