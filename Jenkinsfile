@@ -16,7 +16,7 @@ pipeline {
                     extensions: [[$class: 'CloneOption', depth: 0, noTags: false]]
                 ])
             }
-        }
+        } 
 
         stage('Get Envs Variables') {
             steps {
