@@ -8,6 +8,16 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: 'https://github.com/shirtzo/TaseExam.git']],
+                    extensions: [[$class: 'CloneOption', depth: 0, noTags: false]]
+                ])
+            }
+        }
+
         stage('Get Envs Variables') {
             steps {
                 script {
