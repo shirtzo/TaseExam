@@ -22,8 +22,7 @@ pipeline {
             steps {
                 script {
                     def envParameters = prepareEnv()
-                    echo "Code Commiter: ${envParameters.committerName}, Code Commiter Email: ${envParameters.committerEmail}, 
-                    Commit Hash: ${envParameters.gitCommitHash}, Git URL: ${envParameters.gitUrl}, Git Branch: ${envParameters.gitBranch}"
+                    echo "Code Commiter: ${envParameters.committerName}, Code Commiter Email: ${envParameters.committerEmail},\nCommit Hash: ${envParameters.gitCommitHash}, Git URL: ${envParameters.gitUrl}, Git Branch: ${envParameters.gitBranch}"
                 }
             }
         }
