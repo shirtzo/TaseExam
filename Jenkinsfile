@@ -11,7 +11,8 @@ pipeline {
         stage('Get Envs Variables') {
             steps {
                 script {
-                    prepareEnv()
+                    def envParameters = prepareEnv()
+                    echo "Code Commiter: ${envParameters.codeCommiter}, Commit Hase: ${envParameters.commitHash}, Git URL: ${envParameters.gitUrl}"
                 }
             }
         }
